@@ -3,76 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Search Engine</title>
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .category {
-            margin-bottom: 20px;
-        }
-        .category-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .link {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .link a {
-            color: #fff;
-            text-decoration: none;
-        }
-    </style>
+    <title>Search Engine</title>
 </head>
 <body>
-    <h1>Retro Search Engine</h1>
-
-    <div class="category">
-        <div class="category-title">Fashion</div>
-        <div id="fashion-links"></div>
-    </div>
-
-    <div class="category">
-        <div class="category-title">Shopping</div>
-        <div id="shopping-links"></div>
-    </div>
-
-    <div class="category">
-        <div class="category-title">Games</div>
-        <div id="games-links"></div>
-    </div>
-
-    <div class="category">
-        <div class="category-title">Other</div>
-        <div id="other-links"></div>
-    </div>
-
-    <script src="fashion_links.js"></script>
-    <script src="shopping_links.js"></script>
-    <script src="games_links.js"></script>
-    <script src="other_links.js"></script>
-
-    <script>
-        function displayLinks(containerId, links) {
-            const container = document.getElementById(containerId);
-            links.forEach(link => {
-                const linkElement = document.createElement('div');
-                linkElement.classList.add('link');
-                linkElement.innerHTML = `<a href="${link.url}">${link.title}</a> - ${link.description}`;
-                container.appendChild(linkElement);
-            });
-        }
-
-        displayLinks('fashion-links', fashionLinks);
-        displayLinks('shopping-links', shoppingLinks);
-        displayLinks('games-links', gamesLinks);
-        displayLinks('other-links', otherLinks);
-    </script>
+    <h1>Cook-Search</h1>
+    <form action="/search" method="post">
+        <input type="text" name="query" placeholder="Enter your search query">
+        <button type="submit">Search</button>
+    </form>
 </body>
 </html>
